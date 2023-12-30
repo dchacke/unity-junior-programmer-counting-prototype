@@ -7,17 +7,23 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject spherePrefab;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] GameObject gameOverScreen;
 
     int score;
     public int Score
     {
         get { return score; }
         set {
+            if (value < 0)
+            {
+                GameOver();
+                return;
+            }
+
             score = value;
             scoreText.text = "Score: " + score;
         }
     }
-
 
     // Start is called before the first frame update
     void Start()
@@ -30,5 +36,11 @@ public class GameManager : MonoBehaviour
     void SpawnSphere()
     {
         Instantiate(spherePrefab, new Vector3(Random.Range(-10.0f, 10.0f), 10, 0), spherePrefab.transform.rotation);
+    }
+
+    void GameOver()
+    {
+        gameOverScreen.SetActive(true);
+        CancelInvoke("SpawnSphere");
     }
 }

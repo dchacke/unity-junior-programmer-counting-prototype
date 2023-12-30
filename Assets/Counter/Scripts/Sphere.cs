@@ -13,6 +13,11 @@ public class Sphere : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (!gm.isGameActive)
+        {
+            return;
+        }
+
         gm.Score++;
         Debug.Log(gm.Score);
         Destroy(gameObject);

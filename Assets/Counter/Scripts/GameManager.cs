@@ -25,12 +25,6 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("SpawnSphere", 0, 1);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void SpawnSphere()
     {
         Instantiate(spherePrefab, new Vector3(Random.Range(-10.0f, 10.0f), 10, 0), spherePrefab.transform.rotation);

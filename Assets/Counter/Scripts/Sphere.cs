@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sphere : MonoBehaviour
 {
-    private GameManager gm;
+    GameManager gm;
 
     void Start()
     {

@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Sensor : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private GameManager gm;
+
     void Start()
     {
-        
+        gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
+        gm.score--;
+        Destroy(other.gameObject);
+        Debug.Log(gm.score);
     }
 }

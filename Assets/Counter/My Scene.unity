@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spherePrefab: {fileID: 3101642970380927986, guid: 72b3d6dd83f3145fcb5596d7b0397ab2, type: 3}
+  score: 0
 --- !u!4 &1662859182
 Transform:
   m_ObjectHideFlags: 0
@@ -385,7 +386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045686474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -2.67, z: -0.48727798}
+  m_LocalPosition: {x: 0.02, y: -8.48, z: -0.48727798}
   m_LocalScale: {x: 20.437801, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

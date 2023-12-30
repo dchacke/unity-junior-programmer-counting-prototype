@@ -13,8 +13,8 @@ public class Sensor : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        gm.score--;
+        gm.Score--;
         Destroy(other.gameObject);
-        Debug.Log(gm.score);
+        Debug.Log(gm.Score);
     }
 }

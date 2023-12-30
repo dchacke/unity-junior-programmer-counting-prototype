@@ -1,11 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject spherePrefab;
-    public int score = 0;
+    [SerializeField] TextMeshProUGUI scoreText;
+
+    int score = 0;
+    public int Score
+    {
+        get { return score; }
+        set {
+            score = value;
+            scoreText.text = "Score: " + score;
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()

@@ -13,8 +13,8 @@ public class Sphere : MonoBehaviour
 
     void OnMouseDown()
     {
-        gm.score++;
-        Debug.Log(gm.score);
+        gm.Score++;
+        Debug.Log(gm.Score);
         Destroy(gameObject);
     }
 }

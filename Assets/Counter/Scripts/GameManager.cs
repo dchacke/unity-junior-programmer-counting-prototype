@@ -5,6 +5,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public bool isGameActive = false;
+
     [SerializeField] GameObject spherePrefab;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] GameObject gameOverScreen;
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Physics.gravity = new Vector3(0, -1.0f, 0);
+        isGameActive = true;
         InvokeRepeating("SpawnSphere", 0, 1);
         Score = 0;
     }
@@ -40,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
+        isGameActive = false;
         gameOverScreen.SetActive(true);
         CancelInvoke("SpawnSphere");
     }

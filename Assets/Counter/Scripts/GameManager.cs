@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject spherePrefab;
     [SerializeField] TextMeshProUGUI scoreText;
 
-    int score = 0;
+    int score;
     public int Score
     {
         get { return score; }
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     {
         Physics.gravity = new Vector3(0, -1.0f, 0);
         InvokeRepeating("SpawnSphere", 0, 1);
+        Score = 0;
     }
 
     void SpawnSphere()

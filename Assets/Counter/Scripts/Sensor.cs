@@ -13,11 +13,6 @@ public class Sensor : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!gm.isGameActive)
-        {
-            return;
-        }
-
         gm.Score--;
         Destroy(other.gameObject);
         Debug.Log(gm.Score);

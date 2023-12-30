@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] GameObject gameOverScreen;
 
+    GameObject sensor;
+
     int score;
     public int Score
     {
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
         isGameActive = true;
         InvokeRepeating("SpawnSphere", 0, 1);
         Score = 0;
+        sensor = GameObject.Find("Sensor");
     }
 
     void SpawnSphere()
@@ -45,6 +48,7 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = false;
         gameOverScreen.SetActive(true);
+        sensor.SetActive(false);
         CancelInvoke("SpawnSphere");
     }
 }
